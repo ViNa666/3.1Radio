@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RadioTest {
 
     @Test
-    public void shouldSetCurrentStation() {
+    public void shouldSetCurrentStationNoArgs() {
         Radio radio = new Radio();
         radio.setCurrentStation(5);
         int expected = 5;
@@ -17,8 +17,8 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetCurrentStationUseConstructor() {
-        Radio radio = new Radio(50);
+    public void shouldSetCurrentStationUseConstructorAllArgs() {
+        Radio radio = new Radio(50, 0, 0);
         radio.setCurrentStation(44);
         int expected = 44;
         int actual = radio.getCurrentStation();
@@ -27,7 +27,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetCurrentStationOverLimit() {
+    public void shouldSetCurrentStationOverLimitNoArgs() {
         Radio radio = new Radio();
         radio.setCurrentStation(11);
         int expected = 0;
@@ -37,8 +37,8 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetCurrentStationOverLimitUseConstructor() {
-        Radio radio = new Radio(50);
+    public void shouldSetCurrentStationOverLimitUseConstructorAllArgs() {
+        Radio radio = new Radio(50, 0, 0);
         radio.setCurrentStation(51);
         int expected = 0;
         int actual = radio.getCurrentStation();
@@ -47,7 +47,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldNextStation() {
+    public void shouldNextStationNoArgs() {
         Radio radio = new Radio();
         radio.setCurrentStation(5);
         radio.nextStation();
@@ -57,8 +57,8 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldNextStationUseConstructor() {
-        Radio radio = new Radio(50);
+    public void shouldNextStationUseConstructorAllArgs() {
+        Radio radio = new Radio(50, 0,0);
         radio.setCurrentStation(44);
         radio.nextStation();
         int expected = 45;
@@ -67,7 +67,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldNextStationIfCurrentIsMax() {
+    public void shouldNextStationIfCurrentIsMaxNoArgs() {
         Radio radio = new Radio();
         radio.setCurrentStation(9);
         radio.nextStation();
@@ -77,8 +77,8 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldNextStationIfCurrentIsMaxUseConstructor() {
-        Radio radio = new Radio(50);
+    public void shouldNextStationIfCurrentIsMaxUseConstructorAllArgs() {
+        Radio radio = new Radio(50, 0, 0);
         radio.setCurrentStation(49);
         radio.nextStation();
         int expected = 0;
@@ -87,7 +87,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldPrevStation() {
+    public void shouldPrevStationNoArgs() {
         Radio radio = new Radio();
         radio.setCurrentStation(5);
         radio.prevStation();
@@ -97,8 +97,8 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldPrevStationUseConstructor() {
-        Radio radio = new Radio(50);
+    public void shouldPrevStationUseConstructorAllArgs() {
+        Radio radio = new Radio(50, 0,0);
         radio.setCurrentStation(44);
         radio.prevStation();
         int expected = 43;
@@ -107,7 +107,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldPrevStationIfCurrentIsMin() {
+    public void shouldPrevStationIfCurrentIsMinNoArgs() {
         Radio radio = new Radio();
         radio.setCurrentStation(0);
         radio.prevStation();
@@ -117,8 +117,8 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldPrevStationIfCurrentIsMinUseConstructor() {
-        Radio radio = new Radio(50);
+    public void shouldPrevStationIfCurrentIsMinUseConstructorAllArgs() {
+        Radio radio = new Radio(50,0,0);
         radio.setCurrentStation(0);
         radio.prevStation();
         int expected = 49;
