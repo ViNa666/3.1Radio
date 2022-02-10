@@ -7,7 +7,8 @@ public class Radio {
 
     public Radio() {
     }
-// конструктор для установки количества станций при создании объекта:
+
+    // конструктор для установки количества станций при создании объекта:
     public Radio(int currentNumberOfStations) {
         this.currentNumberOfStations = currentNumberOfStations;
     }
@@ -19,24 +20,33 @@ public class Radio {
         this.currentVolume = currentVolume;
     }
 
-    public int getCurrentStation() { return currentStation;}
+    public int getCurrentStation() {
+        return currentStation;
+    }
 
-    public int getCurrentVolume() {return currentVolume;}
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
 
-    public int getNumberOfStations() {return currentNumberOfStations;}
+    public int getNumberOfStations() {
+        return currentNumberOfStations;
+    }
 
     public void nextStation() {
-        if (currentStation < currentNumberOfStations-1) {
+        if (currentStation < currentNumberOfStations - 1) {
             currentStation = currentStation + 1;
-        } else
+        } else {
             currentStation = 0;
+        }
     }
 
 
     public void prevStation() {
         if (currentStation > 0) {
             currentStation = currentStation - 1;
-        } else currentStation = currentNumberOfStations - 1;
+        } else {
+            currentStation = currentNumberOfStations - 1;
+        }
     }
 
 
@@ -51,14 +61,18 @@ public class Radio {
     public void increaseVolume() {
         if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
-        } else return;
+        } else {
+            return;
+        }
     }
 
 
     public void decreaseVolume() {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
-        } else return;
+        } else {
+            return;
+        }
     }
 
 }
