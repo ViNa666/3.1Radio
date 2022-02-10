@@ -58,7 +58,7 @@ public class RadioTest {
 
     @Test
     public void shouldNextStationUseConstructorAllArgs() {
-        Radio radio = new Radio(50, 0,0);
+        Radio radio = new Radio(50, 0, 0);
         radio.setCurrentStation(44);
         radio.nextStation();
         int expected = 45;
@@ -98,7 +98,7 @@ public class RadioTest {
 
     @Test
     public void shouldPrevStationUseConstructorAllArgs() {
-        Radio radio = new Radio(50, 0,0);
+        Radio radio = new Radio(50, 0, 0);
         radio.setCurrentStation(44);
         radio.prevStation();
         int expected = 43;
@@ -118,7 +118,7 @@ public class RadioTest {
 
     @Test
     public void shouldPrevStationIfCurrentIsMinUseConstructorAllArgs() {
-        Radio radio = new Radio(50,0,0);
+        Radio radio = new Radio(50, 0, 0);
         radio.setCurrentStation(0);
         radio.prevStation();
         int expected = 49;
